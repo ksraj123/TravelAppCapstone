@@ -1,3 +1,5 @@
+import { validateCity } from "./validateCity";
+import { validateDate } from "./validateDate";
 
 function createRowFordisplay(...args){
     let div = document.createElement('div');
@@ -21,6 +23,16 @@ async function handleSubmit(event) {
     }
     // console.log(leavingDate);
     const city = document.getElementById('city').value
+
+    if (!validateCity(city)){
+        alert("Invalid City name");
+        return;
+    }
+
+    if (!validateDate(leavingDate)){
+        alert("Leaving date must be in future!");
+        return;
+    }
 
     const dimmer = document.querySelector('.ui.dimmer');
     dimmer.classList.add('active');
