@@ -3,31 +3,43 @@
     <head>
         <meta charset="utf-8">
         <title>Test</title>
+        <script src="https://kit.fontawesome.com/b138807342.js" crossorigin="anonymous"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200&display=swap" rel="stylesheet">
     </head>
 
     <body>
 
         <header>
-            <span>Sentiment Analysis App</span>
+            <i class="far fa-paper-plane"></i>
+            <span>Take me Anywhere</span>
         </header>
 
         <main>
-            <div class="ui segment">
-                <div class="ui dimmer">
-                    <div class="ui text loader">Analysing</div>
+            <section>
+                <div class="ui segment">
+                    <div class="ui dimmer">
+                        <div class="ui text loader">Getting Details</div>
+                    </div>
                 </div>
-            </div>
-                      
-            <section>
-                <form class="ui form">
-                    <input id="url" type="text" name="url" value="" placeholder="Url to analyse">
-                    <button class="ui button" type="submit">Analyse</button>
-                </form>
-            <section>
+                        
+                <section>
+                    <form class="ui form">
+                        <span>Where To ? and When ?</span>
+                        <input id="city" type="text" name="city" value="" placeholder="city travelling to">
+                        <input type="date" id="leavingDate" name="leavingDate">
+                        <button class="ui button" type="submit">Submit</button>
+                    </form>
+                </section>
 
-            <section id="result-display">
-                <h3><strong>Analysis Results:</strong></h3>
-                <div id="result"></div>
+                <section id="result-display">
+                    <h3><strong>Weather There</strong></h3>
+                    <div id="result"></div>
+                </section>
+            </section>
+            <section id="window">
+                <span>My window</span>
+                <div id="image"></div>
             </section>
         </main>
 
