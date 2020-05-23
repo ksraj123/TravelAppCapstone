@@ -1,11 +1,12 @@
+const axios = require('axios');
 const dotenv = require('dotenv');
 
 dotenv.config();
 
-const getCoordinates = async (city)=>{
-  const res = await fetch(`http://api.geonames.org/searchJSON?name_equals=${encodeURIComponent(city)}&maxRows=1&username=saurabhraj123`)
+async function getCoordinates (city) {
   try {
-    const data = await res.json();
+    const res = await axios.get(`http://api.geonames.org/searchJSON?name_equals=${encodeURIComponent(city)}&maxRows=1&username=saurabhraj123`);
+    const data = res.data;
     return {
       lng: data.geonames[0].lng,
       lat: data.geonames[0].lat
@@ -15,19 +16,4 @@ const getCoordinates = async (city)=>{
   }
 }
 
-module.exports = getCoordinates;
-
-
-/*
-
-API response format
-
-{
-  polarity: 'positive',
-  subjectivity: 'objective',
-  text: 'John is a very good football player!',
-  polarity_confidence: 0.9940106272697449,
-  subjectivity_confidence: 0.943706847162803
-}
-
-*/
+module.exports = getCoordinates; 
