@@ -1,23 +1,24 @@
-# NLP Sentiment Analysis App
+# Take me Anywhere Travel App
 
 - Author - Kumar Saurabh Raj
 - Technologies Used - NodeJS, express, APIs, NLP, webpack, jest, workbox, SaSS, Semantic UI
 
 ## Introduction
 
-This application analyses the sentiment of aticles on provided url using `Aylien API` and displays it on the screen. It is similar to a progressive web app and all parts of the app other the fetching results from the API are functional offline.
+Several APIs are used in this application to present to the user valuable data which would help him in planning his next trip. It is similar to a progressive web app and all parts of the app other the fetching results from the API are functional offline.
 
 ## Get Up and Running
 
 First clone this repo using the following command
 
-    git clone https://github.com/ksraj123/sentimentAnalysisApp.git
+    git clone <The Repo Link here>
 
-Sign up [here](https://developer.aylien.com/signup) for the API id and key
+Sign up on Weatherbit, Pixabay and Geonames for getting the API ids and keys
 then create a `.env` file in the project root of the following format
 
-    API_ID=<API ID HERE>
-    API_KEY=<API KEY HERE>
+    WEATHERBIT_API_KEY=<Paste Weatherbit Api key here>
+    PIXABAY_API_KEY=<Paste Pixabay Api key here>
+    GEONAMES_USER_NAME=<Paste Geonames user name here>
 
 `cd` into your project folder and run:
 
