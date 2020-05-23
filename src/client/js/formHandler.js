@@ -1,4 +1,15 @@
 
+function createRowFordisplay(...args){
+    let div = document.createElement('div');
+    div.classList.add('rows');
+    for (let val of args){
+        let child = document.createElement('span');
+        child.innerText = val;
+        div.appendChild(child);
+    }
+    return div;
+}
+
 async function handleSubmit(event) {
     event.preventDefault()
     
@@ -29,6 +40,14 @@ async function handleSubmit(event) {
     document.querySelector('#image').style.background = `url(${data.image.webformatURL})`;
     // console.log(data.weather);
 
+    let fragment = document.createDocumentFragment();
+    fragment.appendChild(createRowFordisplay("Temp", data.weather.app_max_temp, data.weather.app_max_temp));
+    fragment.appendChild(createRowFordisplay("Snow", data.weather.snow));
+    fragment.appendChild(createRowFordisplay("Wind", data.weather.wind_spd));
+    fragment.appendChild(createRowFordisplay("Rain", data.weather.precip));
+
+    document.querySelector("#result").innerHTML="";
+    document.querySelector("#result").appendChild(fragment);
     dimmer.classList.remove('active');
 }
 

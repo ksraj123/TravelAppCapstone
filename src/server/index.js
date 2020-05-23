@@ -39,5 +39,5 @@ app.post('/api', function (req, res) {
 })
 
 app.listen(port, ()=>{
-    console.log(`NLP app listening on port ${port}!`);
+    console.log(`Travel app listening on port ${port}!`);
 })
