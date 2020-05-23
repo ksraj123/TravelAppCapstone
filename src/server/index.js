@@ -18,16 +18,28 @@ app.get('/', function (req, res) {
 })
 
 const makeApiCalls = async (city, leavingDate, res) => {
-    const image = await getPics(city);
-    const coordinates = await getCoordinates(city);
-    const weather = await getWeather(coordinates, leavingDate);
-    // console.log(weather);
-    // console.log(image);
-
-    res.json({
-        weather: weather,
-        image: image
-    });
+    try{
+        const image = await getPics(city);
+        const coordinates = await getCoordinates(city);
+        const weather = await getWeather(coordinates, leavingDate);
+        res.json({
+            weather: weather,
+            image: image
+        });
+    } catch(err){
+        res.json({
+            weather: {
+                app_max_temp: "Invalid City",
+                app_min_temp: "Invalid City",
+                snow: "Invalid City",
+                wind_spd: "Invalid City",
+                precip: "Invalid City"
+            },
+            image: {
+                webformatURL: "Invalid"
+            }
+        })
+    }
 }
 
 app.post('/api', function (req, res) {

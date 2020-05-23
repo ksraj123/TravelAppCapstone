@@ -41,7 +41,7 @@ async function handleSubmit(event) {
     // console.log(data.weather);
 
     let fragment = document.createDocumentFragment();
-    fragment.appendChild(createRowFordisplay("Temp", data.weather.app_max_temp, data.weather.app_max_temp));
+    fragment.appendChild(createRowFordisplay("Temp", data.weather.app_max_temp, data.weather.app_min_temp));
     fragment.appendChild(createRowFordisplay("Snow", data.weather.snow));
     fragment.appendChild(createRowFordisplay("Wind", data.weather.wind_spd));
     fragment.appendChild(createRowFordisplay("Rain", data.weather.precip));
