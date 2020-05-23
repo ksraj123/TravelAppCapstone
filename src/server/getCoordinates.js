@@ -5,7 +5,8 @@ dotenv.config();
 
 async function getCoordinates (city) {
   try {
-    const res = await axios.get(`http://api.geonames.org/searchJSON?name_equals=${encodeURIComponent(city)}&maxRows=1&username=saurabhraj123`);
+    const API_USER = process.env.GEONAMES_USER_NAME;
+    const res = await axios.get(`http://api.geonames.org/searchJSON?name_equals=${encodeURIComponent(city)}&maxRows=1&username=${API_USER}`);
     const data = res.data;
     return {
       lng: data.geonames[0].lng,

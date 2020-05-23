@@ -1,5 +1,8 @@
+const dotenv = require('dotenv');
+dotenv.config();
+
 const getWeather = async (coordinates, date)=>{
-    const apiKey = '586e68dd0fcc43e2861059dc1ce818a6';
+    const apiKey = process.env.WEATHERBIT_API_KEY;
     const {lng, lat} = coordinates;
     const days = (new Date() - date)/(1000 * 60 * 60 * 24);
     const currentWeather = `https://api.weatherbit.io/v2.0/current?lat=${lat}&lon=${lng}&key=${apiKey}`
